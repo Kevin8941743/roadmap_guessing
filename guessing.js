@@ -8,9 +8,29 @@ const rl = readline.createInterface({
 const args = process.argv
 let option = Number(args[2])
 let random_value = Math.floor(Math.random() * 101)
-console.log(random_value)
 let difficulty = ""
 let count = 0
 let choice = 0
+
+if (option === 1) {
+    option = 10;
+    difficulty = "Easy"
+    choice = 1
+
+} else if (option === 2) {
+    option = 5
+    difficulty = "Medium"
+    choice = 2
+
+} else if (option === 3) {
+    option = 3
+    difficulty = "Hard"
+    choice = 3 
+
+} else {
+    console.log("Please choose an available option from the list!")
+    process.exit(1)
+}
+
 
 
