@@ -41,4 +41,35 @@ console.log(`Great you have selected the ${difficulty} difficulty level.\nLet's 
 rl.setPrompt("Enter your guess:")
 rl.prompt()
 
+rl.on("line", (answer) => {
+    const guess = Number(answer)
+    count += 1
+    if (guess !== random_value && guess < random_value && count < option) {
+        console.log(`Incorrect! The number is greater than ${guess}`)
+        console.log(`attempts left: ${option - count}\n`)
+        rl.prompt()
+
+    } else if (guess !== random_value && guess > random_value && count < option) {
+        console.log(`Incorrect! The number is less than ${guess}`)
+        console.log(`attempts left: ${option - count}\n`)
+        rl.prompt()
+
+    } else if (isNaN(guess)) { 
+        console.log(`${answer} is not a valid number!\n`)
+        rl.close()
+        process.exit(1)
+
+    } else if (guess === random_value && count <= option) {
+        console.log(`attempts left: ${option - count} `)
+        console.log(`Congratulations! You guessed the correct answer in ${count} attempt(s)\n`)
+        rl.close()
+
+    } else if (guess !== random_value && count === option) {
+        console.log("Failed! You have exceeded the amount of guesses!\n")
+        rl.close()
+        process.exit(0)
+    }
+    }
+)
+
 
