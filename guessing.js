@@ -38,6 +38,7 @@ console.log(`Please select the difficulty level:\n1. Easy (10 chances)\n2. Mediu
 
 console.log(`Great you have selected the ${difficulty} difficulty level.\nLet's start the game!\n`)
 
-
+rl.setPrompt("Enter your guess:")
+rl.prompt()
 
 
