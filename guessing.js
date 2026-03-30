@@ -32,5 +32,12 @@ if (option === 1) {
     process.exit(1)
 }
 
+console.log(`Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.\nYou have ${option} chances to guess the correct Number.\n`)
+
+console.log(`Please select the difficulty level:\n1. Easy (10 chances)\n2. Medium (5 chances)\n3. Hard (3 chances)\n\nEnter your choice: ${choice}\n`)
+
+console.log(`Great you have selected the ${difficulty} difficulty level.\nLet's start the game!\n`)
+
+
 
 
